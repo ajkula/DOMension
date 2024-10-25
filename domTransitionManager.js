@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import gsap from 'gsap';
 
-const { SceneManagerWithControls } = require('./sceneControls');
-const { DOMAnalyzer } = require('./domAnalyzer');
+import { SceneManagerWithControls } from './sceneControls';
+import { DOMAnalyzer } from './domAnalyzer';
 
 class DOMTransitionManager {
   constructor(sceneManager) {
