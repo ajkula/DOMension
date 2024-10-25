@@ -33,8 +33,7 @@ DOM Visualizer est un outil qui transforme votre page web en une visualisation 3
 
 ### 2. Incluez les fichiers du visualiseur
 ```html
-<script src="path/to/dom-visualizer/dist/dom-visualizer.min.js"></script>
-<link rel="stylesheet" href="path/to/dom-visualizer/dist/dom-visualizer.css">
+<script src="https://ajkula.github.io/DOMension/domension.min.js"></script>
 ```
 
 ### 3. Préparez votre HTML
@@ -82,8 +81,7 @@ visualizer.initFromDOM(document.body);
     <!-- Dépendances -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="path/to/dom-visualizer.min.js"></script>
-    <link rel="stylesheet" href="path/to/dom-visualizer.css">
+    <script src="https://ajkula.github.io/DOMension/domension.min.js"></script>
 </head>
 <body>
     <!-- Votre contenu HTML normal -->
@@ -248,7 +246,8 @@ Pour plus d'aide :
 - Vérifiez la compatibilité du navigateur
 - Utilisez les outils de développement pour le debugging
 
-## Pour aller plus loin
+
+## todo: Pour aller plus loin
 
 1. Intégration avec des frameworks :
    - React
