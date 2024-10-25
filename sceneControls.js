@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import gsap from 'gsap';
 
-const { SceneManager } = require('./sceneManager');
+import { SceneManager }from './sceneManager';
 
 class IsometricControls {
   /**

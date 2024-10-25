@@ -1,5 +1,5 @@
-const { ElementMesh } = require('./elementMesh');
-const THREE = require('three'); 
+import { ElementMesh } from './elementMesh';
+import * as THREE from 'three'; 
 
 /**
  * Convert the 3D position to 2D coordinates for the screen
