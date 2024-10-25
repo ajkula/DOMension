@@ -357,4 +357,4 @@ function analyzeMockCalls(obj) {
 
 global.analyzeMockCalls = analyzeMockCalls;
 
-export { gsap }
+module.exports = { gsap }
