@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Démo DOMension</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://ajkula.github.io/DOMension/domension.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        #visualizer-container {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+        }
+        .content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .content h1 {
+            font-size: 2em;
+            color: #333;
+        }
+        .content p {
+            font-size: 1em;
+            color: #666;
+        }
+        .content .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .content .new-element {
+            background-color: #e0e0e0;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Bienvenue sur la démo DOMension</h1>
+        <p>Ceci est un exemple de page qui sera visualisée en 3D à l'aide de DOMension.</p>
+        <div class="button" onclick="ajouterElement()">Ajouter un élément</div>
+        <div class="button" onclick="supprimerElement()">Supprimer un élément</div>
+        <!-- Zone où les nouveaux éléments seront ajoutés -->
+        <div id="elements-container"></div>
+    </div>
+
+    <!-- Conteneur pour la visualisation -->
+    <div id="visualizer-container"></div>
+
+    <!-- Script pour initialiser DOMension -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Configuration
+            const container = document.getElementById('visualizer-container');
+            const options = {
+                backgroundColor: 0xf0f0f0,
+                groundColor: 0xffffff,
+                rotationSpeed: 0.5,
+                zoomSpeed: 0.1,
+                showTooltips: true
+            };
+
+            // 2. Initialisation
+            const visualizer = new DOMension.SceneManagerWithTransitions(container, options);
+
+            // 3. Démarrage
+            visualizer.initFromDOM(document.body);
+
+            // 4. Observateur pour les changements du DOM
+            const observer = new MutationObserver(() => {
+                visualizer.updateFromDOM(document.body);
+            });
+
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+
+        // Fonction pour ajouter dynamiquement un élément au DOM
+        function ajouterElement() {
+            const newElement = document.createElement('div');
+            newElement.className = 'new-element';
+            newElement.textContent = 'Nouvel élément ajouté au DOM.';
+            document.getElementById('elements-container').appendChild(newElement);
+        }
+
+        // Fonction pour supprimer le dernier élément ajouté
+        function supprimerElement() {
+            const container = document.getElementById('elements-container');
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            } else {
+                alert('Aucun élément à supprimer.');
+            }
+        }
+    </script>
+</body>
+</html>
