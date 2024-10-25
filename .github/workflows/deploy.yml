@@ -35,7 +35,7 @@ jobs:
           path: ./build
 
   deploy:
-    needs: build
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     permissions:
       pages: write
