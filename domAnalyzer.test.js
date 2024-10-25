@@ -1,5 +1,5 @@
-const { describe, it, expect, beforeEach } = require('@jest/globals');
-const { DOMAnalyzer } = require('./domAnalyzer');
+import { describe, it, expect, beforeEach } from '@jest/globals';
+import { DOMAnalyzer } from './domAnalyzer';
 
 describe('DOMAnalyzer', () => {
   let analyzer;

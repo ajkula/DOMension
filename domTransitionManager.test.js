@@ -2,8 +2,8 @@ import gsap from 'gsap';
 
 jest.mock('gsap');
 
-const { describe, it, expect, beforeEach } = require('@jest/globals');
-const { DOMTransitionManager, SceneManagerWithTransitions } = require('./domTransitionManager');
+import { describe, it, expect, beforeEach }from '@jest/globals';
+import { DOMTransitionManager, SceneManagerWithTransitions } from'./domTransitionManager';
 import * as THREE from 'three';
 
 describe('DOMTransitionManager', () => {

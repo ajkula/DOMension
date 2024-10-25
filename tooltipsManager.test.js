@@ -1,4 +1,4 @@
-const { describe, it, expect, beforeEach, afterEach } = require('@jest/globals');
+import { describe, it, expect, beforeEach, afterEach } from '@jest/globals';
 import { DOMTooltip, ElementMeshWithTooltip } from './tooltipsManager';
 import * as THREE from 'three';
 

@@ -1,4 +1,4 @@
-const {  describe, it, expect, beforeEach } = require('@jest/globals');
+import {  describe, it, expect, beforeEach } from '@jest/globals';
 import { IsometricControls } from './sceneControls';
 import * as THREE from 'three';
 
