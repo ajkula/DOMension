@@ -1,4 +1,4 @@
-require('@testing-library/jest-dom');
+import '@testing-library/jest-dom';
 
 // Mock canvas Three.js
 const mockCanvas = {
@@ -357,4 +357,4 @@ function analyzeMockCalls(obj) {
 
 global.analyzeMockCalls = analyzeMockCalls;
 
-module.exports = { gsap }
+export { gsap }
